@@ -17,7 +17,10 @@ const Root = styled.input`
   }
 `;
 
-// プレゼンテーショナル・コンポーネント
+// Inputは親コンポーネントからonChangeを受け取って、値が変更された時に新しい値をonChangeに渡して呼び出すよう設計
+// 見た目とロジックに分けて実装
+
+// プレゼンテーショナル・コンポーネント（見た目）
 export const InputPresenter = ({
   className,
   onChange,
@@ -46,7 +49,7 @@ InputPresenter.defaultProps = {
   placeholder: "",
 };
 
-// コンテナー・コンポーネント
+// コンテナー・コンポーネント（ロジック）
 export const InputContainer = ({
   className,
   onChange,
