@@ -119,7 +119,6 @@ TopPageContainer.defaultProps = {
   defaultKeyword: "ねこ",
 };
 
-// TODO コンテナー・コンポーネントはあとで実装する
 export default (props) => (
   <TopPageContainer presenter={TopPagePresenter} {...props} />
 );

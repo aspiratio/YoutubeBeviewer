@@ -1,5 +1,5 @@
-import webpack from "webpack";
 import path from "path";
+import { IgnorePlugin } from "webpack";
 
 export default (env, args) => {
   const isProduction = args.mode === "production";
@@ -27,5 +27,9 @@ export default (env, args) => {
       },
       extensions: [".js", ".jsx"],
     },
+    // momentパッケージには世界中のタイムゾーンに合わせたロケール（日付や時刻の表記方法）情報が含まれる
+    // デフォルトのロケールさえあればいいので、容量が大きくならないようにするため
+    // momentの中のlocales以下のモジュールをビルド時に含めないようにする
+    plugins: [new IgnorePlugin(/^\.\/locale$/, /dayjs$/)],
   };
 };
