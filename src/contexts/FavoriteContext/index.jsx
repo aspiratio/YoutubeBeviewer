@@ -22,12 +22,14 @@ export const FavoriteProvider = ({ api, children }) => {
       dispatch({ type: "init", ids: data });
     });
   }, []);
+  return (
+    // コンテキストプロバイダーとしてuseReducerのstateとdispatchをコンテキストに設定
+    // value={state, dispatch}
+    <FavoriteContext.Provider value={value}>
+      {children}
+    </FavoriteContext.Provider>
+  );
 };
-
-return (
-  // コンテキストプロバイダーとしてuseReducerのstateとdispatchをコンテキストに設定
-  <FavoriteContext.Provider value={value}>{children}</FavoriteContext.Provider>
-);
 
 FavoriteProvider.propTypes = {
   children: PropTypes.node.isRequired,
