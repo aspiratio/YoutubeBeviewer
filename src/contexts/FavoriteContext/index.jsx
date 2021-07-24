@@ -16,7 +16,7 @@ export const FavoriteProvider = ({ api, children }) => {
   const [state, dispatch] = useReducer(reducer, { ids: [] });
   const value = { state, dispatch };
   // useEffectを使ってコンポーネント描画時にお気に入りリストを取得
-  // 取得した後にdispatchを使って初期化するアクションに取得したお気に入りリストを設定して初期化
+  // 取得した後にdispatchを使って初期化するアクション 取得したお気に入りリストを初期値として設定
   useEffect(() => {
     api.get().then(({ data }) => {
       dispatch({ type: "init", ids: data });

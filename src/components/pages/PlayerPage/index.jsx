@@ -26,6 +26,7 @@ export const PlayerPagePresenter = ({
   <VideosListTemplate
     headerContents={<Header />}
     playerContents={<YouTubeInlineFrame videoId={videoId} />}
+    videoInfoContents={videoData && <VideoInfo item={videoData} />}
     relatedVideosListContents={
       <RecommendVideosWrapper>
         <Typography variant="subtitle" bold>
