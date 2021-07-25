@@ -25,7 +25,9 @@ FavoriteButtonPresenter.defaultProps = {
   onClick: null,
 };
 
-const FavoriteButtonContainer = ({ className, videoId, api, presenter }) => {
+const FavoriteButtonContainer = ({
+  className, videoId, api, presenter,
+}) => {
   const {
     state: { ids: favoriteIds },
     dispatch,

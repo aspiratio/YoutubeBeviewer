@@ -27,14 +27,14 @@ export const PlayerPagePresenter = ({
     headerContents={<Header />}
     playerContents={<YouTubeInlineFrame videoId={videoId} />}
     videoInfoContents={videoData && <VideoInfo item={videoData} />}
-    relatedVideosListContents={
+    relatedVideosListContents={(
       <RecommendVideosWrapper>
         <Typography variant="subtitle" bold>
           関連動画
         </Typography>
         <VideosList videos={relatedVideos} loading={loadingRelatedVideos} />
       </RecommendVideosWrapper>
-    }
+    )}
     onScrollEnd={onScrollEnd}
   />
 );
@@ -89,9 +89,9 @@ export const PlayerPageContainer = ({ api, presenter }) => {
     setRelatedVideos(
       relatedVideos.concat(
         videos.filter(
-          ({ id: itemId }) => !relatedVideos.find(({ id }) => id === itemId)
-        )
-      )
+          ({ id: itemId }) => !relatedVideos.find(({ id }) => id === itemId),
+        ),
+      ),
     );
     // 続きを取得するためのnextPageTokenを覚えておく
     setNextPageToken(newNextPageToken);
@@ -121,8 +121,7 @@ PlayerPageContainer.propTypes = {
 PlayerPageContainer.defaultProps = {
   api: {
     getVideoData: (videoId) => axios.get(`/api/videos/${videoId}`),
-    getRelatedVideos: (videoId, pageToken = "") =>
-      axios.get(`/api/videos/${videoId}/related?pageToken=${pageToken}`),
+    getRelatedVideos: (videoId, pageToken = "") => axios.get(`/api/videos/${videoId}/related?pageToken=${pageToken}`),
   },
 };
 

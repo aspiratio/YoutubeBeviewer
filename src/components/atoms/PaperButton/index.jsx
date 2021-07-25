@@ -18,7 +18,9 @@ const Root = styled.button`
   }
 `;
 
-const PaperButton = ({ className, children, type, onClick }) => (
+const PaperButton = ({
+  className, children, type, onClick,
+}) => (
   <Root className={className} type={type} onClick={onClick}>
     {children}
   </Root>

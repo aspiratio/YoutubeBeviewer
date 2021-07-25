@@ -17,5 +17,5 @@ ReactDOM.render(
       <App />
     </FavoriteProvider>
   </>,
-  rootEl
+  rootEl,
 );

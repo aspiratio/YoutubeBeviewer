@@ -25,13 +25,13 @@ module.exports = (api) => {
       "babel-plugin-styled-components",
       isProduction
         ? {
-            fileName: false,
-            displayName: false,
-            pure: true,
-          }
+          fileName: false,
+          displayName: false,
+          pure: true,
+        }
         : {
-            minify: false,
-          },
+          minify: false,
+        },
     ],
   ];
 

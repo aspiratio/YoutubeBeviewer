@@ -85,14 +85,13 @@ const VideoInfoContainer = ({
     statistics: { viewCount },
   },
   presenter,
-}) =>
-  presenter({
-    videoId,
-    title,
-    viewCount,
-    publishedAt: dayjs(publishedAt).format("YYYY/MM/DD"),
-    description,
-  });
+}) => presenter({
+  videoId,
+  title,
+  viewCount,
+  publishedAt: dayjs(publishedAt).format("YYYY/MM/DD"),
+  description,
+});
 
 VideoInfoContainer.propTypes = {
   item: PropTypes.shape({

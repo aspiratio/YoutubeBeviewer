@@ -4,8 +4,8 @@ const fs = require("fs");
 const FAVORITE_IDS_FILE = "./favoriteIds.json";
 
 // お気に入りリストの読み込み
-module.exports.readFavoriteIds = () =>
-  new Promise((resolve, reject) => {
+module.exports.readFavoriteIds = () => {
+  return new Promise((resolve, reject) => {
     // fs.readFile(ファイル名, 文字コード, (err, data) => {
     // ファイルの読み込みが終わったら以下の処理が実行される
     // errにはファイル読み込み時のエラーオブジェクト（エラーがなければ値なし）
@@ -20,10 +20,11 @@ module.exports.readFavoriteIds = () =>
       resolve(data ? JSON.parse(data) : []);
     });
   });
+};
 
 // お気に入りリストへの書き込み
-module.exports.writeFavoriteIds = (favoriteIds) =>
-  new Promise((resolve, reject) => {
+module.exports.writeFavoriteIds = (favoriteIds) => {
+  return new Promise((resolve, reject) => {
     // fs.writeFile(ファイル名, 書き込む文字列, (err) => {
     // ファイルの読み込みが終わったら以下の処理が実行される
     // errにはファイル読み込み時のエラーオブジェクト（エラーがなければ値なし）
@@ -37,3 +38,4 @@ module.exports.writeFavoriteIds = (favoriteIds) =>
       resolve();
     });
   });
+};

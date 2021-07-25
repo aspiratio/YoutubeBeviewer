@@ -5,32 +5,35 @@ export default { title: "atoms/Typography" };
 
 const sampleText = "This component is Typography.";
 
-export const colorVariation = () =>
-  colors.map((c) => (
-    <Typography key={c} color={c}>
-      {c}.{sampleText}
-    </Typography>
-  ));
+export const colorVariation = () => colors.map((c) => (
+  <Typography key={c} color={c}>
+    {c}
+    .
+    {sampleText}
+  </Typography>
+));
 colorVariation.story = {
   name: "color",
 };
 
-export const sizeVariation = () =>
-  sizes.map((s) => (
-    <Typography key={s} size={s}>
-      {s}.{sampleText}
-    </Typography>
-  ));
+export const sizeVariation = () => sizes.map((s) => (
+  <Typography key={s} size={s}>
+    {s}
+    .
+    {sampleText}
+  </Typography>
+));
 sizeVariation.story = {
   name: "size",
 };
 
-export const bold = () =>
-  sizes.map((s) => (
-    <Typography key={s} size={s} bold>
-      {s}.{sampleText}
-    </Typography>
-  ));
+export const bold = () => sizes.map((s) => (
+  <Typography key={s} size={s} bold>
+    {s}
+    .
+    {sampleText}
+  </Typography>
+));
 
 export const displayBlock = () => (
   <>
@@ -39,7 +42,7 @@ export const displayBlock = () => (
   </>
 );
 displayBlock.story = {
-  name: 'display="block"',
+  name: "display=\"block\"",
 };
 
 export const displayInline = () => (
@@ -49,7 +52,7 @@ export const displayInline = () => (
   </>
 );
 displayInline.story = {
-  name: 'display="inline"',
+  name: "display=\"inline\"",
 };
 
 export const displayInlineBlock = () => (
@@ -64,15 +67,16 @@ export const displayInlineBlock = () => (
 );
 
 displayInlineBlock.story = {
-  name: 'display="inline-block"',
+  name: "display=\"inline-block\"",
 };
 
-export const align = () =>
-  aligns.map((a) => (
-    <Typography key={a} align={a}>
-      {a}.{sampleText}
-    </Typography>
-  ));
+export const align = () => aligns.map((a) => (
+  <Typography key={a} align={a}>
+    {a}
+    .
+    {sampleText}
+  </Typography>
+));
 align.story = {
   name: "align",
 };

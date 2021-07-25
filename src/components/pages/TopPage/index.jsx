@@ -64,7 +64,7 @@ const TopPageContainer = ({ api, presenter, defaultKeyword }) => {
     if (pageToken) {
       // 重複を取り除く
       const itemsWithoutDuplicated = items.filter(
-        ({ id: itemId }) => !videos.find(({ id }) => id === itemId)
+        ({ id: itemId }) => !videos.find(({ id }) => id === itemId),
       );
       nextVideos = videos.concat(itemsWithoutDuplicated);
     } else {
@@ -87,7 +87,7 @@ const TopPageContainer = ({ api, presenter, defaultKeyword }) => {
     () => () => {
       cleanedUp.current = true;
     },
-    []
+    [],
   );
 
   return presenter({
@@ -115,8 +115,7 @@ TopPageContainer.propTypes = {
 
 TopPageContainer.defaultProps = {
   api: {
-    search: (keyword, params) =>
-      axios.get(`/api/videos/search/${keyword}`, { params }),
+    search: (keyword, params) => axios.get(`/api/videos/search/${keyword}`, { params }),
   },
   defaultKeyword: "ねこ",
 };

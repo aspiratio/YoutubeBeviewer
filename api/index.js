@@ -29,7 +29,7 @@ router.get("/videos/search/:keyword", (req, res, next) => {
       pageToken,
     });
     // 動画の情報を取得
-    const ids = idItems.map(({ id: { videoId } }) => videoId);
+    const ids = idItems.map(({ id: { videoId } }) => { return videoId; });
     const {
       data: { items },
     } = await youtube.videos.list({
@@ -92,7 +92,7 @@ router.get("/videos/:videoId/related", (req, res, next) => {
       pageToken,
     });
     // 動画の情報を取得
-    const ids = idItems.map(({ id: { videoId } }) => videoId);
+    const ids = idItems.map(({ id: { videoId } }) => { return videoId; });
     const {
       data: { items },
     } = await youtube.videos.list({
@@ -146,7 +146,7 @@ router
       if (indexOfId !== -1) {
         // パラメータに指定されたIDが現時点のお気に入りにあった場合
         // 指定されたIDを削除したものをお気に入りリストに書き込む
-        writeFavoriteIds(favoriteIds.filter((favoriteId) => favoriteId !== id));
+        writeFavoriteIds(favoriteIds.filter((favoriteId) => { return favoriteId !== id; }));
       }
       res.end();
     })().catch(next);

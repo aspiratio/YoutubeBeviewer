@@ -5,9 +5,8 @@ import styled, { css } from "styled-components";
 export const sizes = ["s", "m", "l"];
 
 const Root = styled.button`
-  ${({ fullWidth }) =>
-    fullWidth &&
-    css`
+  ${({ fullWidth }) => fullWidth
+    && css`
       width: 100%;
     `};
   appearance: none;
@@ -46,7 +45,9 @@ const Root = styled.button`
   }};
 `;
 
-const Button = ({ className, children, type, size, fullWidth, onClick }) => (
+const Button = ({
+  className, children, type, size, fullWidth, onClick,
+}) => (
   <Root
     className={className}
     type={type}
